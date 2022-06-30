@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation 'org.glassfish.jersey:jersey-bom:3.0.5'
+    implementation 'org.glassfish.jersey.containers:jersey-container-servlet-core:3.0.5'
+    implementation 'org.glassfish.jersey.containers:jersey-container-jetty-http:3.0.5'
+    implementation 'org.glassfish.jersey.inject:jersey-hk2:3.0.5'
+
+    // Since Servlet API 5.0, API moved from the package java.servlet to jakarta.servlet
+    implementation 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+//    implementation 'ch.qos.logback:logback-classic:1.2.10'
+//    implementation 'org.glassfish.jersey.core:jersey-server:3.0.5'
+//    implementation 'org.glassfish.jersey.core:jersey-common:3.0.5'
+}
+
+test {
+    useJUnitPlatform()
+}
